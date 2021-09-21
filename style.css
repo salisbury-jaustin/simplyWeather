@@ -1,0 +1,356 @@
+/* import generic mixins */
+/* import page sections style mixins */
+/* output */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  margin: 0px;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+header {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  width: 100%;
+  background-color: #00C693;
+}
+header #title {
+  margin: 0 auto 0 0.2rem;
+}
+header #utility {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0.2rem 0 auto;
+}
+header #search {
+  width: 5rem;
+  margin: 0 0.5rem 0 0;
+  border-radius: 10%;
+  border-color: #004CB6;
+  border-style: solid;
+}
+header #search:focus-visible {
+  border-color: #E96B41;
+}
+header #outer-circle {
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: #00C693;
+  border-radius: 50%;
+  border: solid #004CB6;
+  border-width: 0.2rem;
+  position: relative;
+}
+header #inner-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 0.8rem;
+  width: 0.8rem;
+  background-color: #004CB6;
+  border-radius: 50%;
+}
+
+#container-current #current {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+}
+#container-current #temp {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 4;
+}
+#container-current #icon {
+  grid-column-start: 3;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 4;
+}
+#container-current #feel {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 4;
+  grid-row-end: 5;
+}
+#container-current #hilo {
+  grid-column-start: 3;
+  grid-column-end: 5;
+  grid-row-start: 4;
+  grid-row-end: 5;
+}
+#container-current #sun {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 5;
+  grid-row-end: 9;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#container-current #wind {
+  grid-column-start: 5;
+  grid-column-end: 7;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+#container-current #precip {
+  grid-column-start: 7;
+  grid-column-end: 9;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+#container-current #dwpt {
+  grid-column-start: 5;
+  grid-column-end: 7;
+  grid-row-start: 3;
+  grid-row-end: 5;
+}
+#container-current #humid {
+  grid-column-start: 7;
+  grid-column-end: 9;
+  grid-row-start: 3;
+  grid-row-end: 5;
+}
+#container-current #baro {
+  grid-column-start: 5;
+  grid-column-end: 7;
+  grid-row-start: 5;
+  grid-row-end: 7;
+}
+#container-current #visi {
+  grid-column-start: 7;
+  grid-column-end: 9;
+  grid-row-start: 5;
+  grid-row-end: 7;
+}
+#container-current .hourly {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+#container-current .hourly:nth-child(odd) {
+  background-color: #E7FFF4;
+}
+
+#container-daily #day {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+#container-daily .day-temp {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 4;
+}
+#container-daily .day-icon {
+  grid-column-start: 3;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 4;
+}
+#container-daily .day-sun {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 4;
+  grid-row-end: 5;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+#container-daily .day-hilo {
+  grid-column-start: 5;
+  grid-column-end: 7;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+#container-daily .day-precip {
+  grid-column-start: 5;
+  grid-column-end: 7;
+  grid-row-start: 3;
+  grid-row-end: 5;
+}
+#container-daily .day-wind {
+  grid-column-start: 7;
+  grid-column-end: 9;
+  grid-row-start: 1;
+  grid-row-end: 5;
+}
+#container-daily #day:nth-child(even) {
+  background-color: #E7FFF4;
+}
+
+footer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 2rem;
+  width: 100%;
+  background-color: #00C693;
+}
+footer #nav-alert {
+  display: flex;
+  flex-flow: row nowrap;
+}
+footer .circle {
+  height: 0.4rem;
+  width: 0.4rem;
+  background-color: #E96B41;
+  border-radius: 50%;
+  position: relative;
+  top: 0;
+}
+
+@media screen and (max-width: 767.9px) {
+  .container-content {
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  header {
+    height: 3rem;
+  }
+
+  #container-current #current {
+    height: 7rem;
+    padding: 0 1rem 0 1rem;
+  }
+  #container-current .hourly {
+    height: 4rem;
+    padding: 0 1rem 0 1rem;
+  }
+
+  #container-daily #day {
+    height: 4rem;
+    padding: 0 1rem 0 1rem;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+  }
+}
+@media screen and (max-width: 767.9px) and (orientation: landscape) {
+  #container-current #current {
+    padding: 0 2rem 0 2rem;
+  }
+  #container-current .hourly {
+    height: 2rem;
+    padding: 0 2rem 0 2rem;
+  }
+
+  #container-daily #day {
+    height: 3rem;
+    padding: 0 2rem 0 2rem;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container-content {
+    width: 100%;
+  }
+
+  header {
+    height: 5rem;
+  }
+
+  #container-current #current {
+    height: 7rem;
+    padding: 0 3rem 0 3rem;
+  }
+  #container-current .hourly {
+    height: 3rem;
+    padding: 0 3rem 0 3rem;
+  }
+
+  #container-daily #day {
+    height: 7rem;
+    padding: 0 3rem 0 3rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .container-content {
+    width: 80%;
+  }
+
+  #container-daily #day {
+    height: 4rem;
+    padding: 0 3rem 0 3rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container-content {
+    width: 40%;
+  }
+}
+/*
+@include screen('global') {
+    @include htmlBody('global', $colors);
+    @include containerContent('global', $colors);
+    @include header('global', $colors); 
+    @include today('global', $colors); 
+    @include footer('global', $colors); 
+}
+@include screen('small') {
+    @include htmlBody('small', $colors); 
+    @include containerContent('small', $colors); 
+    @include header('small', $colors);
+    @include today('small', $colors);
+    @include footer('small', $colors);
+}
+@include screen('landscape') {
+    @include htmlBody('landscape', $colors);
+    @include containerContent('landscape', $colors); 
+    @include header('landscape', $colors);
+    @include today('landscape', $colors);
+    @include footer('landscape', $colors);
+}
+@include screen('med') {
+    @include htmlBody('med', $colors);
+    @include containerContent('med', $colors); 
+    @include header('med', $colors);
+    @include today('med', $colors);
+    @include footer('med', $colors);
+}
+@include screen('large') {
+    @include htmlBody('large', $colors);
+    @include containerContent('large', $colors);
+    @include header('large', $colors); 
+    @include today('large', $colors);
+    @include footer('large', $colors);
+}
+@include screen('xLarge') {
+    @include htmlBody('xLarge', $colors);
+    @include containerContent('xLarge', $colors); 
+    @include header('xLarge', $colors);
+    @include today('xLarge', $colors);
+    @include footer('xLarge', $colors);
+}
+*/
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simply Weather</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.js"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/vuex@next"></script>
+</head>
+<body>
+    <div id="app" class="container-content">
+        <header>
+            <div id="title">
+                SimplyWeather
+            </div>
+            <div id="utility">
+                <input type="text" id="search"/>
+                <div id="outer-circle">
+                    <div id="inner-circle"></div>
+                </div>
+            </div>
+        </header>
+        <div id="weather">
+            <div id="container-current" v-if="currentPageStatus">
+                <current v-bind:current="current"></current> 
+                <div id="container-hourly">
+                    <hourly v-for="hour in hourly"
+                        v-bind:hourly="hour">
+                    </hourly>
+                </div>
+            </div>
+            <div id="container-daily" v-if="dailyPageStatus">
+                <day v-for="day in daily"
+                    v-bind:day="day">
+                </day>
+            </div>
+            <div id="container-alerts" v-if="alertsPageStatus">
+                <alert v-if="hasAlerts"></alert>
+                <div id="noAlerts" v-if="!hasAlerts">
+                    There are no weather alerts
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div @click="setPage('current')">Today</div>
+            <div @click="setPage('daily')">7 Day</div>
+            <div id="nav-alert" @click="setPage('alerts')">
+                <div>
+                    Alerts
+                </div>
+                <div class="circle" v-if="hasAlerts">
+
+                </div>
+            </div>
+        </footer>
+    </div> 
+</body>
+<script src="./app.js"></script>
+</html>
