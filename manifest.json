@@ -1,0 +1,21 @@
+{
+    "name": "SimplyWeather",
+    "icons": [
+        {
+            "src": "/assets/icon-small.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/assets/icon-large.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ],
+    "start_url": "https://simplyweather.com",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "scope": "./",
+    "theme_color": "#00C693",
+    "description": "Your weather made simple."
+}
