@@ -1,4 +1,4 @@
-const CACHE_NAME = 'simply-weather-cache';
+const CACHE_NAME = 'simpli-weather-cache';
 const urlsToCache = [
 './index.html',
 './manifest.json',

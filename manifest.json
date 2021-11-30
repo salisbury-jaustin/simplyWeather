@@ -1,6 +1,6 @@
 {
-    "name": "SimplyWeather",
-    "short_name": "SimplyWeather",
+    "name": "SimpliWeather",
+    "short_name": "SimpliWeather",
     "icons": [
         {
             "src": "/assets/icon-small.png",
@@ -13,8 +13,8 @@
             "sizes": "512x512"
         }
     ],
-    "id": "/",
-    "start_url": "/",
+    "id": "https://simpliweather.herokuapp.com/",
+    "start_url": "https://simpliweather.herokuapp.com/",
     "background_color": "#ffffff",
     "display": "standalone",
     "orientation": "any",
