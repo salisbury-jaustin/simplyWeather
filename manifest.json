@@ -1,5 +1,6 @@
 {
     "name": "SimplyWeather",
+    "short_name": "SimplyWeather",
     "icons": [
         {
             "src": "/assets/icon-small.png",
@@ -12,9 +13,11 @@
             "sizes": "512x512"
         }
     ],
-    "start_url": "https://simplyweather.com",
+    "id": "/",
+    "start_url": "/",
     "background_color": "#ffffff",
     "display": "standalone",
+    "orientation": "any",
     "scope": "./",
     "theme_color": "#00C693",
     "description": "Your weather made simple."

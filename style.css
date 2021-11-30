@@ -1,6 +1,14 @@
 /* import generic mixins */
 /* import page sections style mixins */
+/*sizes*/
 /* output */
+.flex-pair {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -76,6 +84,7 @@ header #inner-circle {
   grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 4;
+  justify-content: start;
 }
 #container-current #icon {
   grid-column-start: 3;
@@ -100,9 +109,7 @@ header #inner-circle {
   grid-column-end: 5;
   grid-row-start: 5;
   grid-row-end: 9;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-evenly;
+  justify-content: start;
   align-items: center;
 }
 #container-current #wind {
@@ -110,36 +117,42 @@ header #inner-circle {
   grid-column-end: 7;
   grid-row-start: 1;
   grid-row-end: 3;
+  justify-content: start;
 }
 #container-current #precip {
   grid-column-start: 7;
   grid-column-end: 9;
   grid-row-start: 1;
   grid-row-end: 3;
+  justify-content: end;
 }
 #container-current #dwpt {
   grid-column-start: 5;
   grid-column-end: 7;
   grid-row-start: 3;
   grid-row-end: 5;
+  justify-content: start;
 }
 #container-current #humid {
   grid-column-start: 7;
   grid-column-end: 9;
   grid-row-start: 3;
   grid-row-end: 5;
+  justify-content: end;
 }
 #container-current #baro {
   grid-column-start: 5;
   grid-column-end: 7;
   grid-row-start: 5;
   grid-row-end: 7;
+  justify-content: start;
 }
 #container-current #visi {
   grid-column-start: 7;
   grid-column-end: 9;
   grid-row-start: 5;
   grid-row-end: 7;
+  justify-content: end;
 }
 #container-current .hourly {
   display: flex;
@@ -151,7 +164,7 @@ header #inner-circle {
   background-color: #E7FFF4;
 }
 
-#container-daily #day {
+#container-daily .day {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(4, 1fr);
@@ -161,21 +174,26 @@ header #inner-circle {
   grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 4;
+  justify-content: start;
 }
 #container-daily .day-icon {
   grid-column-start: 3;
   grid-column-end: 5;
   grid-row-start: 1;
   grid-row-end: 4;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
 }
 #container-daily .day-sun {
   grid-column-start: 1;
   grid-column-end: 5;
   grid-row-start: 4;
   grid-row-end: 5;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
 }
 #container-daily .day-hilo {
@@ -183,20 +201,26 @@ header #inner-circle {
   grid-column-end: 7;
   grid-row-start: 1;
   grid-row-end: 3;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
 }
 #container-daily .day-precip {
   grid-column-start: 5;
   grid-column-end: 7;
   grid-row-start: 3;
   grid-row-end: 5;
+  justify-content: center;
 }
 #container-daily .day-wind {
   grid-column-start: 7;
   grid-column-end: 9;
   grid-row-start: 1;
   grid-row-end: 5;
+  justify-content: center;
 }
-#container-daily #day:nth-child(even) {
+#container-daily .day:nth-child(even) {
   background-color: #E7FFF4;
 }
 
@@ -236,14 +260,62 @@ footer .circle {
     height: 7rem;
     padding: 0 1rem 0 1rem;
   }
+  #container-current #temp .container-icon {
+    width: 3rem;
+    height: 3rem;
+  }
+  #container-current #icon {
+    width: 3rem;
+    height: 3rem;
+  }
+  #container-current #sun .container-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+  #container-current #wind .container-icon {
+    width: 3rem;
+    height: 3rem;
+  }
+  #container-current #precip .container-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+  #container-current #dwpt .container-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+  #container-current #humid .container-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+  #container-current #baro .container-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+  #container-current #visi .container-icon {
+    width: 2rem;
+    height: 2rem;
+  }
   #container-current .hourly {
     height: 4rem;
     padding: 0 1rem 0 1rem;
   }
+  #container-current .hourly-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  #container-current .hourly-wind-dir {
+    width: 2rem;
+    height: 2rem;
+  }
 
-  #container-daily #day {
-    height: 4rem;
+  #container-daily .day {
+    height: 7rem;
     padding: 0 1rem 0 1rem;
+  }
+  #container-daily .container-icon {
+    width: 2rem;
+    height: 2rem;
   }
 
   footer {
@@ -260,8 +332,8 @@ footer .circle {
     padding: 0 2rem 0 2rem;
   }
 
-  #container-daily #day {
-    height: 3rem;
+  #container-daily .day {
+    height: 5rem;
     padding: 0 2rem 0 2rem;
   }
 
@@ -283,14 +355,62 @@ footer .circle {
     height: 7rem;
     padding: 0 3rem 0 3rem;
   }
+  #container-current #temp .container-icon {
+    width: 3rem;
+    height: 3rem;
+  }
+  #container-current #icon {
+    width: 3rem;
+    height: 3rem;
+  }
+  #container-current #sun .container-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+  #container-current #wind .container-icon {
+    width: 3rem;
+    height: 3rem;
+  }
+  #container-current #precip .container-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+  #container-current #dwpt .container-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+  #container-current #humid .container-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+  #container-current #baro .container-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+  #container-current #visi .container-icon {
+    width: 2rem;
+    height: 2rem;
+  }
   #container-current .hourly {
     height: 3rem;
     padding: 0 3rem 0 3rem;
   }
+  #container-current .hourly-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  #container-current .hourly-wind-dir {
+    width: 2rem;
+    height: 2rem;
+  }
 
-  #container-daily #day {
+  #container-daily .day {
     height: 7rem;
     padding: 0 3rem 0 3rem;
+  }
+  #container-daily .container-icon {
+    width: 2rem;
+    height: 2rem;
   }
 }
 @media screen and (min-width: 992px) {
@@ -298,7 +418,7 @@ footer .circle {
     width: 80%;
   }
 
-  #container-daily #day {
+  #container-daily .day {
     height: 4rem;
     padding: 0 3rem 0 3rem;
   }
